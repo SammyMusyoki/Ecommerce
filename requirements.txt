@@ -1,0 +1,4 @@
+Django==4.1.7
+Psycopg2==2.9.5
+Pillow==9.4.0
+Django-environ==0.10.0
