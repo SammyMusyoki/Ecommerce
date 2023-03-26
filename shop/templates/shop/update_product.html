@@ -1,0 +1,13 @@
+{% extends 'user/base.html' %}
+
+{% block title %}
+Update Product
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Update Product</button>
+</form>
+{% endblock %}

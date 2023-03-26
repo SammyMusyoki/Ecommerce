@@ -4,7 +4,7 @@
 <h1>Home Page</h1>
  {% for product in products %}
     <img src="{{product.image.url}}" alt="" width="100px" height="200px"><br>
-    <p>{{product.product_shop}}</p>
+    <p><a href="">{{product.product_shop}}</a></p>
     <h4>Name: {{ product.name}}</h4>
     <p>Description : {{product.description}}</p>
     <p>Price : Ksh {{product.price}}</p>
