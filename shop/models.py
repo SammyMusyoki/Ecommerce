@@ -30,7 +30,7 @@ class Products(models.Model):
     product_shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     price = models.IntegerField(default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
-    description = models.CharField(max_length=255, default='', blank=True, null=True)
+    description = models.TextField(default='')
     image = models.ImageField(upload_to='products/images/')
 
     @staticmethod

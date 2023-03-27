@@ -3,6 +3,8 @@
 {% block content %}
 <h1>Home Page</h1>
  {% for product in products %}
+    <li><a href="{% url 'update-product' product.id %}">Update Product</a></li>
+    <li><a href="{% url 'delete-product' product.id %}">Delete Product</a></li>
     <img src="{{product.image.url}}" alt="" width="100px" height="200px"><br>
     <p><a href="">{{product.product_shop}}</a></p>
     <h4>Name: {{ product.name}}</h4>
@@ -10,4 +12,11 @@
     <p>Price : Ksh {{product.price}}</p>
     <p>Category : {{product.category}}</p>
  {% endfor%}
+
+ <div class="links">
+    <ul>
+        <li><a href="{% url 'create-product' %}">Create Product</a></li>
+    </ul>
+    
+ </div>
 {% endblock %}

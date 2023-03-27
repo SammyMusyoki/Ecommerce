@@ -7,20 +7,19 @@ from .forms import SignUpForm
 
 # Create your views here.
 def signup(request):
+    form = SignUpForm()
     if request.method == 'POST':
         form = SignUpForm(request.POST)
 
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data('username')
-            password = form.cleaned_data('password1')
-
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('shop:home')
-    else:
-        form = SignUpForm()
-
+            user = form.save()
+            user.save()
+            messages.success(request, 'Sign Up Successful')
+            return redirect('login')
+        else:
+            messages.error(request, 'Invalid username or password')
+            return redirect('signup')
+    
     context = {
         'form' : form
     }
