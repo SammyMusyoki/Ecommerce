@@ -25,7 +25,7 @@ class VendorSignUpForm(forms.ModelForm):
 
     class Meta:
         model = Shop
-        fields = ['shop_name', 'shop_address', 'shop_phone']
+        fields = ['shop_owner', 'shop_name', 'shop_address', 'shop_phone']
 
     def save(self, commit=True):
         user = super().save(commit=False)

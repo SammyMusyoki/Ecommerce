@@ -33,7 +33,8 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.User'
-LOGIN_URL = ''
+LOGIN_URL = 'login'
+LOGOUT_URL = 'login'
 # Application definition
 
 INSTALLED_APPS = [

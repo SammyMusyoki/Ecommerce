@@ -5,19 +5,21 @@ Sign Up
 {% endblock %}
 
 {% block content %}
-<h2>Sign Up Here</h2>
-<form action="" method="POST">
-    {% csrf_token %}
-    {% for field in form %}
-    <p>
-        {{field.label_tag}}<br>
-        {{field}}
-        {% for error in field.errors%}
-        <p style="color: red;">{{ error }}</p>
+<div class="registration-form" align="center">
+    <h2>Sign Up Here</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {{field.label_tag}}
+            {{field}}
+            {% for error in field.errors%}
+            <p style="color: red;">{{ error }}</p>
+            {% endfor%}
+        </p>
         {% endfor%}
-    </p>
-    {% endfor%}
-    <button type="submit">SignUp</button>
-</form>
-    <p>Already have an account? <a href="{% url 'login' %}"> Login </a>here.</p>
+        <button type="submit">SignUp</button>
+    </form>
+        <p>Already have an account? <a href="{% url 'login' %}"> Login </a>here.</p>
+</div>
 {% endblock %}
